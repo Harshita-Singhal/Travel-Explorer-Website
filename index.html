@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Explorer 🌍</title>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Travel Explorer 🌍</h1>
+    <nav>
+      <button class="nav-btn active" data-target="home">Home</button>
+      <button class="nav-btn" data-target="destinations">Destinations</button>
+      <button class="nav-btn" data-target="plan">Plan Trip</button>
+      <button class="nav-btn" data-target="savedPlans">My Trips</button>
+      <button class="nav-btn" data-target="faq">FAQ</button>
+      <button class="nav-btn" data-target="login">Login</button>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="page active" aria-label="Home">
+      <div class="welcome-text">
+        <h2>Welcome to Travel Explorer</h2>
+        <p>Your gateway to unforgettable journeys</p>
+      </div>
+      <div class="slider" aria-label="Popular destinations image slider">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Beach at sunset"/>
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=60" alt="Mountain hiking"/>
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="City skyline at night"/>
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=60" alt="Historic architecture"/>
+      </div>
+      
+      <div class="video-section">
+        <h3>Explore the World</h3>
+        <iframe src="https://www.youtube.com/embed/linlz7-Pnvw?si=Hr5pu5P6rbVzoU0G" title="Travel Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+    
+    <!-- Destinations -->
+    <section id="destinations" class="page" aria-label="Destinations">
+      <h2 style="text-align:center; color:#004a99; margin-bottom: 1.6rem;">Popular Destinations</h2>
+      <div>
+        <div class="destination-card" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Maldives Beach"/>
+          <div class="destination-content">
+            <h3>Maldives</h3>
+            <p>Pristine beaches, crystal-clear waters, and luxury resorts.</p>
+          </div>
+        </div>
+        <div class="destination-card" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=60" alt="Paris Eiffel Tower"/>
+          <div class="destination-content">
+            <h3>Paris</h3>
+            <p>The city of lights, romance, art, and world-class cuisine.</p>
+          </div>
+        </div>
+        <div class="destination-card" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=60" alt="Tokyo cityscape"/>
+          <div class="destination-content">
+            <h3>Tokyo</h3>
+            <p>A vibrant metropolis blending tradition with cutting-edge technology.</p>
+          </div>
+        </div>
+        <div class="destination-card" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="Rome ancient ruins"/>
+          <div class="destination-content">
+            <h3>Rome</h3>
+            <p>History, art, and architecture from ancient to modern times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Plan Trip -->
+    <section id="plan" class="page" aria-label="Plan your trip">
+      <h2 style="text-align:center; color:#004a99; margin-bottom: 1.6rem;">Plan Your Trip</h2>
+      <form id="tripForm" aria-label="Trip planning form">
+        <label>
+          Destination
+          <input type="text" id="destinationInput" placeholder="E.g., Paris" required />
+        </label>
+        <label>
+          Date of Travel
+          <input type="date" id="dateInput" required />
+        </label>
+        <label>
+          Activities & Notes
+          <textarea id="activitiesInput" rows="4" placeholder="What do you want to do?"></textarea>
+        </label>
+        <button type="submit">Save Trip Plan</button>
+      </form>
+    </section>
+    
+    <!-- Saved Trips -->
+    <section id="savedPlans" class="page" aria-label="My saved trips">
+      <h2 style="text-align:center; color:#004a99; margin-bottom: 1.6rem;">My Trips</h2>
+      <div id="savedPlansSection" aria-live="polite">
+        <h3>Your Saved Trip Plans</h3>
+        <ul id="savedPlansList">
+          <!-- Trip plans will be inserted here -->
+        </ul>
+      </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section id="faq" class="page" aria-label="Frequently asked questions">
+      <h2 style="text-align:center; color:#004a99; margin-bottom: 1.6rem;">FAQ</h2>
+      <div>
+        <details>
+          <summary>How do I save my trip plans?</summary>
+          <p>Use the Plan Trip page to enter your destination, date, and activities, then click "Save Trip Plan". Your plans will appear under My Trips.</p>
+        </details>
+        <details>
+          <summary>Is my data saved permanently?</summary>
+          <p>Currently, plans are saved in your browser's local storage, so they persist between visits on the same device and browser.</p>
+        </details>
+        <details>
+          <summary>Can I upload my own photos?</summary>
+          <p>This demo does not support uploading photos, but it's a great feature to add in the future!</p>
+        </details>
+      </div>
+    </section>
+    
+    <!-- Login / Register -->
+    <section id="login" class="page" aria-label="User login and registration">
+      <div class="auth-forms">
+        <div class="form-box">
+          <h3>Register</h3>
+          <form id="registerForm" aria-label="Registration form">
+            <label>
+              Name
+              <input type="text" id="registerName" required placeholder="Your full name" />
+            </label>
+            <label>
+              Email
+              <input type="email" id="registerEmail" required placeholder="you@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" id="registerPassword" required placeholder="At least 6 characters" />
+            </label>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+        <div class="form-box">
+          <h3>Login</h3>
+          <form id="loginForm" aria-label="Login form">
+            <label>
+              Email
+              <input type="email" id="loginEmail" required placeholder="you@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" id="loginPassword" required placeholder="Your password" />
+            </label>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    &copy; 2025 Travel Explorer. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #c1dbf9 0%, #fefefe 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header & Nav */
+header {
+  background: #004a99;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+nav button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+nav button:hover, nav button.active {
+  background: white;
+  color: #004a99;
+  border-color: #004a99;
+  box-shadow: 0 4px 10px rgb(0 74 153 / 0.3);
+}
+
+/* Main content */
+main {
+  flex-grow: 1;
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pages */
+.page {
+  display: none;
+  animation: fadeIn 0.6s ease forwards;
+}
+.page.active {
+  display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Home Page */
+.welcome-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.welcome-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.welcome-text p {
+  font-size: 1.2rem;
+  color: #004a99;
+  font-weight: 600;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+.slider img {
+  height: 180px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.slider img:hover {
+  transform: scale(1.07);
+}
+
+/* Video Section */
+.video-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+.video-section h3 {
+  color: #004a99;
+  margin-bottom: 1rem;
+}
+.video-section iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgb(0 74 153 / 0.3);
+}
+
+/* Destination Cards */
+.destination-card {
+  display: inline-block;
+  width: calc(50% - 1rem);
+  margin: 0.5rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  vertical-align: top;
+  transition: transform 0.3s ease;
+}
+.destination-card:hover, .destination-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgb(0 74 153 / 0.4);
+  outline: none;
+}
+.destination-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.destination-content {
+  padding: 0.8rem 1rem;
+}
+.destination-content h3 {
+  margin: 0 0 0.4rem;
+  color: #004a99;
+}
+.destination-content p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Forms */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgb(0 74 153 / 0.2);
+}
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #004a99;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form textarea {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #004a99;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+form textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+form button {
+  background: #004a99;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+form button:hover {
+  background: #0066cc;
+}
+
+/* Saved Trips */
+#savedPlansList {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #004a99;
+}
+
+/* FAQ */
+details {
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #004a99;
+  outline-offset: 3px;
+}
+
+/* Login/Register forms side by side */
+.auth-forms {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form-box {
+  flex: 1 1 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 20px rgb(0 74 153 / 0.2);
+}
+
+/* Footer */
+footer {
+  background: #004a99;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  nav {
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  #login .auth-forms {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slider img {
+    height: 220px;
+  }
+  .destination-card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
